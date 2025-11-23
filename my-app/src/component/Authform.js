@@ -10,31 +10,32 @@ function Authform() {
           <button className={!islogin ? 'active' : ''} onClick={() => setIslogin(false)}>sign up</button>
 
         </div>
-        {islogin ? (
-          <div className='form-box'>
+        {islogin ? <>
+          <div className='form'>
             <h2>Login form</h2>
             <input type='email' placeholder='Email' />
             <input type='password' placeholder='Password' />
-            <a href="#" onClick={(e) => e.preventDefault()}>forgot password</a>
+            <a href="#">forgot password</a>
             <button>Login</button>
-            <p>not a member? <a href='#' onClick={(e) => { e.preventDefault(); setIslogin(false); }}>Signup Now</a></p>
+            <p>not a member? <a href='#' onClick={() => setIslogin(false)}>Signup Now</a></p>
           </div>
-        ) : (
-          <div className='form-box'>
-            <h2>Sign up form</h2>
+        </> : <>
+          <div className='form'>
+            <h2>Signup form</h2>
             <input type='email' placeholder='Email' />
             <input type='password' placeholder='Password' />
             <input type='password' placeholder='Confirm Password' />
             <button>Sign up</button>
-            <p>Already a member? <a href='#' onClick={(e) => { e.preventDefault(); setIslogin(true); }}>Login Now</a></p>
+
           </div>
         )}
+        
 
+
+        </div>
 
       </div>
-
-    </div>
-  )
+      )
 }
 
-export default Authform
+      export default Authform
